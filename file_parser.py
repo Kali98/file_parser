@@ -42,6 +42,29 @@ class Fileparser:
         arguments = [self.from_val, self.replace_val, self.tab_chars_val]
         return arguments
 
+    def from_given(self, from_atr, tab_chars_atr, poem_content):
+        ret_content = ''
+        if from_atr == "tabs":
+            if tab_chars_atr == '':
+                no_of_spaces = (' '*4)
+                ret_content = poem_content.replace('\t', no_of_spaces)
+            else :
+                no_of_spaces = (' '* int(tab_chars_atr))
+                retLine = poem_content.replace('\t', (no_of_spaces))
+        elif from_atr == "spaces":
+            retLine = re.sub(' +', '\t', poem_content)
+        return ret_content
+
+    def from_not_given(self, poem_content):
+        ret = [0,0]
+        for each_line in poem_content:
+            for each_letter in each_line:
+                if each_letter == " ":
+                    ret[0]+=1
+                elif each_letter == "\t":
+                    ret[1] +=1
+        return ret
+
 if __name__ == "__main__":
     fp = Fileparser()
     user_args = fp.get_args(sys.argv[1:]) 
