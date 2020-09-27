@@ -7,7 +7,14 @@ import re
 class Fileparser:
     
     '''
-        
+        Program is ran as a module : '-m file_parser'
+        Program takes parameters:
+            
+            -f (--from): defines if the conversion takes place from 'tabs' or 'spaces'
+            -r (--replace): if any value given; the changes will be written into the file (if not then copy will be made)
+            -t (--tab-chars): defines how many spaces will replace a tab-to-spaces conversion (default is 4)
+            If -f is not given then program will identify if file is seperated by spaces or tabs and ignores other parameters
+
     '''
 
     def __init__(self, from_val = None, replace_val = None, tab_chars_val = None):
