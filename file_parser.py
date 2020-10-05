@@ -7,7 +7,7 @@ import re
 class Fileparser:
     
     '''
-        Text file parsing file which converts from spaces to tabs and vice-versa; takes in arguments to specify the conversion procedure
+        Text file parsing program which converts from spaces to tabs and vice-versa; takes in arguments to specify the conversion procedure
         Program is ran as a module : '-m file_parser'
         Program takes parameters:
             
